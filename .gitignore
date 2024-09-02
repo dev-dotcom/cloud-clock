@@ -1,0 +1,78 @@
+﻿# Ignore Visual Studio temporary files, build results, and
+# User-specific files
+.vscode/
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Ignore build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+# NuGet Packages
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Resharper
+_ReSharper*/
+*.ReSharper
+*.DotSettings.user
+
+# Rider
+.idea/
+
+# Mac files
+*.DS_Store
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# IIS files
+[Ii][Nn][Ee][Tt][Uu][Ss][Ee][Rr]/
+[Ii][Nn][Ee][Tt][Pp][Uu][Bb]/
+
+# Rider, IntelliJ IDEA
+.idea/
+
+# Ignore files for local environment settings
+*.env
+.env.local
+
+# Ignore secrets files
+secrets.json
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Azure Functions
+local.settings.json
+
+# Entity Framework Migrations
+Migrations/
+
+# Logs
+*.log
+logs/
+
+# Web server files
+libman.json
