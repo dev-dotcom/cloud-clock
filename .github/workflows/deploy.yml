@@ -1,0 +1,36 @@
+name: Deploy cloud-clock
+
+on:
+  workflow_dispatch:
+
+env: 
+  AZURE_WEBAPP_NAME: "cloudclock"
+
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 'Checkout GitHub Action'
+      uses: actions/checkout@v3
+
+    - name: 'Set up .NET Core'
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: 'Restore dependencies'
+      uses: dotnet restore ./clockonazure.sln
+    
+    - name: 'Build'
+      run: dotnet build ./clockonazure.sln --configuration Release --no-restore
+
+    - name: 'Publish'
+      run: dotnet publish ./clockonazure.sln --configuration Release --output ./publish 
+
+    - name: 'Deploy to Azure Web App'
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: ${{env.AZURE_WEBAPP_NAME}}
+        publish_profile: ${{secrets.API_PUBLISH_SECRET}}
+        package: ./publish
