@@ -11,7 +11,7 @@ app.MapGet("/", () =>
 
     string formattedDateTime = istTime.ToString("dddd, dd MMMM yyyy hh:mm:ss tt");
 
-    return formattedDateTime + "Hello Dev";
+    return formattedDateTime;
 });
 
 app.Run();
