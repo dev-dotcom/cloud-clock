@@ -20,7 +20,7 @@ jobs:
         dotnet-version: '8.0.x'
 
     - name: 'Restore dependencies'
-      uses: dotnet restore ./clockonazure.sln
+      run: dotnet restore ./clockonazure.sln
     
     - name: 'Build'
       run: dotnet build ./clockonazure.sln --configuration Release --no-restore
